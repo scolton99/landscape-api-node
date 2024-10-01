@@ -1,0 +1,19 @@
+{
+  "name": "landscape-api",
+  "version": "1.0.0",
+  "description": "Client for the Landscape API for Node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scolton99/landscape-api-node.git"
+  },
+  "author": "Spencer Colton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scolton99/landscape-api-node/issues"
+  },
+  "homepage": "https://github.com/scolton99/landscape-api-node#readme"
+}
