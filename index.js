@@ -105,7 +105,7 @@ const main = async () => {
   switch (op) {
     case 'reboot-all': {
       const allComputers = await apiCall('GetComputers', {});
-      console.log(await rebootWithDelay(allComputers.map(it => it.id + '')));
+      console.log(JSON.stringify(await rebootWithDelay(allComputers.map(it => it.id + '')), null, 2));
       break;
     }
     case 'reboot-needed': {
@@ -123,8 +123,6 @@ const main = async () => {
       console.error(`Invalid op: ${op}`);
     }
   }
-
-  console.log();
 };
 
 main();
