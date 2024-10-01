@@ -98,9 +98,7 @@ const main = async () => {
 
   const apiCall = async (action, params) => await landscapeApi(process.env.LANDSCAPE_API_URI, process.env.LANDSCAPE_API_KEY, process.env.LANDSCAPE_API_SECRET, action, params);
 
-  const rebootWithDelay = async ids => {
-    await apiCall('RebootComputers', { deliver_after: oneHourFromNow().toISOString().split('.')[0] + 'Z', computer_ids: ids });
-  }
+  const rebootWithDelay = async ids => await apiCall('RebootComputers', { deliver_after: oneHourFromNow().toISOString().split('.')[0] + 'Z', computer_ids: ids });
 
   switch (op) {
     case 'reboot-all': {
