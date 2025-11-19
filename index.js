@@ -102,12 +102,12 @@ const main = async () => {
 
   switch (op) {
     case 'reboot-all': {
-      const allComputers = await apiCall('GetComputers', {});
+      const allComputers = await apiCall('GetComputers', {query: 'last-ping:1'});
       console.log(JSON.stringify(await rebootWithDelay(allComputers.map(it => it.id + '')), null, 2));
       break;
     }
     case 'reboot-needed': {
-      const rebootNeededComputers = await apiCall('GetComputers', {query: 'needs:reboot'});
+      const rebootNeededComputers = await apiCall('GetComputers', {query: 'needs:reboot last-ping:1'});
       if (rebootNeededComputers.length === 0) {
         console.log('No computers needed reboot');
         return;
